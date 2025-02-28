@@ -17,7 +17,7 @@ export default function Header() {
       {images.map((src, index) => (
        <li key={index}>
         <img src={src} alt={`Asset ${index}`} />
-        <p>{homeTypes[index]}</p> {/* Display corresponding text */}
+        <p>{homeTypes[index]}</p>
        </li>
       ))}
      </ul>

@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import './App.css';
 import Router from './Router';
 import Header from './components/Header/Header';
+import StickyFooter from './components/StickyFooter/StickyFooter.tsx';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
     <div className="App">
       <Header />
       <Router />
+      <StickyFooter />
     </div>
   );
 }
