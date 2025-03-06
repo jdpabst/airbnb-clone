@@ -1,4 +1,4 @@
-import './header.scss'
+import './Header.scss'
 
 export default function Header() {
  const homeTypes = ['OMG!', 'Icons', 'Play', 'Off-the-grid', 'Top cities', 'National parks', 'Cabins', 'Treehouses', 'Beachfront', 'Mansions', 'Castles', 'Amazing Views', 'Countryside', 'New', 'Houseboats', 'Earth homes', 'Domes', 'Caves', 'Historical homes', 'Lake', 'A-frames', 'Lakefront', 'Farms', 'Luxe', 'Trending', 'Islands', 'Dammusi', 'Containers', 'Riads', 'Golfing', 'Hanoks', 'Amazing pools', 'Desert', 'Boats', 'Cycladic homes', 'Camping', 'Rooms', 'Ski in/out', 'Creative spaces', 'Yurts', 'Design', 'Tropical', 'Tiny homes', 'Campers', 'Arctic', 'Surfing', 'Skiing', 'Vineyards', 'Bed & breakfasts', "Chef's kitchens", "Shepherd's huts", 'Top of the world', 'Ryokans', 'Minsus', 'Barns', 'Casas particulares', 'Windmills', 'Grand pianos', 'Towers', 'Adapted', 'Trulli', 'Beach']
