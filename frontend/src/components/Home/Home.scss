@@ -2,4 +2,100 @@
  height: 1000px;
  // background-color: beige;
  position: relative;
+
+ .total-price-slider-container {
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  width: 87%;
+  height: 65px;
+  margin: 0 auto;
+  margin-top: 26px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .total-price-slider-desc {
+   text-align: left;
+
+   h1 {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 4px;
+   }
+
+   p {
+    font-size: 15px;
+    color: #6a6a6a
+   }
+  }
+
+  .switch {
+   position: relative;
+   display: inline-block;
+   width: 48px;
+   height: 32px;
+  }
+
+  /* Hide default HTML checkbox */
+  .switch input {
+   opacity: 0;
+   width: 0;
+   height: 0;
+  }
+
+  /* The slider */
+  .slider {
+   position: absolute;
+   cursor: pointer;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: #b0b0b0;
+   -webkit-transition: .2s;
+   transition: .2s;
+  }
+
+  .slider:before {
+   position: absolute;
+   content: "";
+   height: 28px;
+   width: 28px;
+   left: 2px;
+   bottom: 2px;
+   background-color: white;
+   -webkit-transition: .2s;
+   transition: .2s;
+  }
+
+  input:checked+.slider {
+   background-color: #222222;
+  }
+
+  input:focus+.slider {
+   box-shadow: 0 0 1px #222222;
+  }
+
+  input:checked+.slider:before {
+   -webkit-transform: translateX(16px);
+   -ms-transform: translateX(16px);
+   transform: translateX(16px);
+   background-image: url(http://localhost:3000/assets/check.svg);
+   background-size: 11px;
+   background-repeat: no-repeat;
+   background-position: center;
+  }
+
+
+  /* Rounded sliders */
+  .slider.round {
+   border-radius: 34px;
+  }
+
+  .slider.round:before {
+   border-radius: 50%;
+  }
+ }
+
+
 }
