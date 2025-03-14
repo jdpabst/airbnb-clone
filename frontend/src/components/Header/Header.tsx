@@ -24,6 +24,25 @@ export default function Header() {
     </div>
    </div>
 
+   <div className='mid-header'>
+    <div className='top-row'>
+     <img className='logo' src='/assets/asset 63.svg' />
+     <p>Airbnb your home</p>
+     <img />
+     <div className='user-menu'>
+      <img className='hamburger-menu' src='/assets/asset 67.svg' />
+      <img className='user-icon' src='/assets/asset 66.svg' />
+     </div>
+    </div>
+    <div className='middle-row'>
+     <p>Homes</p>
+     <p>Experiences</p>
+    </div>
+    <div className='bottom-row'>
+     <div></div>
+    </div>
+   </div>
+
   </div>
  )
 }

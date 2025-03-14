@@ -19,7 +19,11 @@ export default function Home() {
      </label>
     </div>
    </div>
-   <p>Home page</p>
+   <div className='main-content'>
+    {/* have a reusable component for each of the home types here? */}
+    <p>Home page</p>
+   </div>
+
   </div>
  )
 }
