@@ -27,17 +27,22 @@ export default function Header() {
    <div className='mid-header'>
     <div className='top-row'>
      <img className='logo' src='/assets/asset 63.svg' />
-     <p>Airbnb your home</p>
-     <img />
-     <div className='user-menu'>
-      <img className='hamburger-menu' src='/assets/asset 67.svg' />
-      <img className='user-icon' src='/assets/asset 66.svg' />
+     <div className='header-right-container'>
+      <p>Airbnb your home</p>
+      <img className='world-icon' src='/assets/asset 66.svg' />
+      <div className='user-menu'>
+       <img className='hamburger-menu' src='/assets/asset 67.svg' />
+       <img className='user-icon' src='/assets/asset 68.svg' />
+      </div>
      </div>
     </div>
+
     <div className='middle-row'>
+     {/* these toggle colors and change the bottom row */}
      <p>Homes</p>
      <p>Experiences</p>
     </div>
+
     <div className='bottom-row'>
      <div></div>
     </div>
