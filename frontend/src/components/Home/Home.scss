@@ -1,8 +1,7 @@
 .home-main-container {
  height: 1000px;
- // background-color: beige;
  position: relative;
- padding-top: 140px;
+
 
  .total-price-slider-container {
   border: 1px solid #dddddd;
@@ -105,10 +104,18 @@
  .total-price-slider-container {
   display: flex;
  }
+
+ .home-main-container {
+  padding-top: 140px;
+ }
 }
 
 @media screen and (min-width: 768px) {
  .total-price-slider-container {
   display: none;
+ }
+
+ .home-main-container {
+  padding-top: 250px;
  }
 }

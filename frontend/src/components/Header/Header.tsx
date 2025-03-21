@@ -44,7 +44,41 @@ export default function Header() {
     </div>
 
     <div className='bottom-row'>
-     <div></div>
+     <div className='bottom-row-content-container'>
+
+      {/* need to change these to inputs instead -- types -- calendar, text. li won't work for the functionality we are looking for */}
+      <ul>
+       <li className='first-li'>
+        <p className='heading'>Where</p>
+        <input className='sub-heading' placeholder='Search destinations' />
+       </li>
+       <li>
+        <div className='divider'></div>
+       </li>
+       <li>
+        <p className='heading'>Check in</p>
+        <p className='sub-heading'>Add date</p>
+       </li>
+       <li >
+        <div className='divider'></div>
+       </li>
+       <li>
+        <p className='heading'>Check out</p>
+        <p className='sub-heading'>Add date</p>
+       </li>
+       <li>
+        <div className='divider'></div>
+       </li>
+       <li>
+        <p className='heading'>Who</p>
+        <p className='sub-heading'>Add guests</p>
+       </li>
+      </ul>
+      <div className='search-img-container'>
+       <img className='search-img' src='/assets/asset 65.svg' />
+      </div>
+
+     </div>
     </div>
    </div>
 
