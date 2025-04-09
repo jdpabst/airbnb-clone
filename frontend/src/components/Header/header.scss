@@ -167,10 +167,8 @@
    margin-top: 30px;
 
    .bottom-row-content-container {
-    width: 90%;
-    height: 65px;
-    padding-left: 8px;
-    padding-right: 8px;
+    width: 89%;
+    height: 68px;
     margin: 0 auto;
     border: 1px solid #e7e7e7;
     border-radius: 32px;
@@ -180,49 +178,93 @@
     align-items: center;
     box-shadow: 2px 2px 7px #dddddd;
 
-    ul {
+    .search-criteria-container {
+     width: 100%;
+     height: 100%;
+     position: relative;
+     border-radius: 32px;
      text-align: left;
-     width: 85%;
-     list-style-type: none;
      display: flex;
-     justify-content: space-evenly;
+     justify-content: flex-start;
      align-items: center;
 
-     li {
+     .search-criteria {
+      height: 100%;
+      padding-top: 14px;
+      border-radius: 32px;
+     }
+
+     .search-criteria:focus {
+      background-color: lime;
+     }
+
+     .search-criteria:focus:hover {
+      background-color: lime;
+     }
+
+     .overflow-hidden {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
 
+     }
+
+
+     .first-div {
+      padding-right: 15px;
+      width: 33%;
+      padding-left: 35px;
+      padding-right: 37px;
+
       input {
+       background-color: transparent;
        border: none;
       }
 
       input:focus {
        outline: none;
       }
-
      }
 
-     .first-li {
-      padding-right: 10px;
+     .dates-div {
+      border-radius: 32px;
+      padding-left: 20px;
+      width: 16%;
      }
+
+     .fourth-div {
+      width: 24.8%;
+      padding-left: 20px;
+      padding-right: 37px;
+     }
+
+
 
      .divider {
       height: 30px;
       width: 1px;
       background-color: #dddddd;
+      margin-left: 2px;
+      margin-right: 2px;
      }
 
      .sub-heading {
-      font-size: 15px;
+      font-size: 14.5px;
       color: #898989;
       margin-top: 2px;
      }
 
      .heading {
       font-size: 12.75px;
-      font-weight: 400;
+      font-weight: 450;
+      margin-bottom: 2px;
      }
+
+     .div-hover:hover {
+      background-color: #dddddd;
+      cursor: pointer;
+     }
+
 
     }
 
@@ -237,7 +279,9 @@
      .search-img {
       height: 16px;
       filter: invert(100%);
+      padding-left: calc(32px* 0.5);
       margin-top: 4px;
+      align-self: center;
      }
     }
 

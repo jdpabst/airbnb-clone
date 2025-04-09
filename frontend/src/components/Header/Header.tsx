@@ -1,7 +1,9 @@
-import './Header.scss'
+import { useState } from 'react';
+import './Header.scss';
 
 export default function Header() {
- const homeTypes = ['OMG!', 'Icons', 'Play', 'Off-the-grid', 'Top cities', 'National parks', 'Cabins', 'Treehouses', 'Beachfront', 'Mansions', 'Castles', 'Amazing Views', 'Countryside', 'New', 'Houseboats', 'Earth homes', 'Domes', 'Caves', 'Historical homes', 'Lake', 'A-frames', 'Lakefront', 'Farms', 'Luxe', 'Trending', 'Islands', 'Dammusi', 'Containers', 'Riads', 'Golfing', 'Hanoks', 'Amazing pools', 'Desert', 'Boats', 'Cycladic homes', 'Camping', 'Rooms', 'Ski in/out', 'Creative spaces', 'Yurts', 'Design', 'Tropical', 'Tiny homes', 'Campers', 'Arctic', 'Surfing', 'Skiing', 'Vineyards', 'Bed & breakfasts', "Chef's kitchens", "Shepherd's huts", 'Top of the world', 'Ryokans', 'Minsus', 'Barns', 'Casas particulares', 'Windmills', 'Grand pianos', 'Towers', 'Adapted', 'Trulli', 'Beach']
+ const homeTypes = ['OMG!', 'Icons', 'Play', 'Off-the-grid', 'Top cities', 'National parks', 'Cabins', 'Treehouses', 'Beachfront', 'Mansions', 'Castles', 'Amazing Views', 'Countryside', 'New', 'Houseboats', 'Earth homes', 'Domes', 'Caves', 'Historical homes', 'Lake', 'A-frames', 'Lakefront', 'Farms', 'Luxe', 'Trending', 'Islands', 'Dammusi', 'Containers', 'Riads', 'Golfing', 'Hanoks', 'Amazing pools', 'Desert', 'Boats', 'Cycladic homes', 'Camping', 'Rooms', 'Ski in/out', 'Creative spaces', 'Yurts', 'Design', 'Tropical', 'Tiny homes', 'Campers', 'Arctic', 'Surfing', 'Skiing', 'Vineyards', 'Bed & breakfasts', "Chef's kitchens", "Shepherd's huts", 'Top of the world', 'Ryokans', 'Minsus', 'Barns', 'Casas particulares', 'Windmills', 'Grand pianos', 'Towers', 'Adapted', 'Truli', 'Beach']
+ const [focusedIndex, setFocusedIndex] = useState(null);
 
  const images = Array.from({ length: 62 }, (_, index) => `/assets/asset ${index}.jpeg`)
 
@@ -47,37 +49,36 @@ export default function Header() {
      <div className='bottom-row-content-container'>
 
       {/* need to change these to inputs instead -- types -- calendar, text. li won't work for the functionality we are looking for */}
-      <ul>
-       <li className='first-li'>
+      <div className='search-criteria-container'>
+       <div className='first-div div-hover search-criteria' tabIndex={-1}>
         <p className='heading'>Where</p>
         <input className='sub-heading' placeholder='Search destinations' />
-       </li>
-       <li>
+       </div>
+       <div>
         <div className='divider'></div>
-       </li>
-       <li>
+       </div>
+       <div className='dates-div overflow-hidden div-hover search-criteria' tabIndex={-1}>
         <p className='heading'>Check in</p>
-        <p className='sub-heading'>Add date</p>
-       </li>
-       <li >
+        <p className='sub-heading'>Add dates</p>
+       </div>
+       <div >
         <div className='divider'></div>
-       </li>
-       <li>
+       </div>
+       <div className='dates-div overflow-hidden div-hover search-criteria' tabIndex={-1}>
         <p className='heading'>Check out</p>
-        <p className='sub-heading'>Add date</p>
-       </li>
-       <li>
+        <p className='sub-heading'>Add dates</p>
+       </div>
+       <div>
         <div className='divider'></div>
-       </li>
-       <li>
+       </div>
+       <div className='fourth-div div-hover search-criteria' tabIndex={-1}>
         <p className='heading'>Who</p>
         <p className='sub-heading'>Add guests</p>
-       </li>
-      </ul>
-      <div className='search-img-container'>
-       <img className='search-img' src='/assets/asset 65.svg' />
+       </div>
+       <div className='search-img-container'>
+        <img className='search-img' src='/assets/asset 65.svg' />
+       </div>
       </div>
-
      </div>
     </div>
    </div>
