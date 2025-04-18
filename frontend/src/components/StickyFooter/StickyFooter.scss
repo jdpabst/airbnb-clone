@@ -116,3 +116,43 @@
   transform: translateY(0);
   opacity: 1;
  }
+
+ @media screen and (max-width: 767px) {
+  .map-bttn-mid-screen-size {
+   display: none;
+  }
+ }
+
+ @media screen and (min-width: 768px) {
+  .mobile-footer-container {
+   display: none;
+  }
+
+  .map-bttn-mid-screen-size {
+   position: fixed;
+   bottom: 40px;
+   left: calc(50% - 70px);
+   height: 50px;
+   width: 140px;
+   border-radius: 27px;
+   border: none;
+   background-color: #222222;
+   color: white;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   margin: 0 auto;
+   gap: 8px;
+
+   p {
+    font-weight: 550;
+    font-size: 15px;
+   }
+
+   img {
+    height: 16px;
+    filter: invert(100%)
+   }
+  }
+ }
