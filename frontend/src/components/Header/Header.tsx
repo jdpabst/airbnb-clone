@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './Header.scss';
 
 export default function Header() {
  const homeTypes = ['OMG!', 'Icons', 'Play', 'Off-the-grid', 'Top cities', 'National parks', 'Cabins', 'Treehouses', 'Beachfront', 'Mansions', 'Castles', 'Amazing Views', 'Countryside', 'New', 'Houseboats', 'Earth homes', 'Domes', 'Caves', 'Historical homes', 'Lake', 'A-frames', 'Lakefront', 'Farms', 'Luxe', 'Trending', 'Islands', 'Dammusi', 'Containers', 'Riads', 'Golfing', 'Hanoks', 'Amazing pools', 'Desert', 'Boats', 'Cycladic homes', 'Camping', 'Rooms', 'Ski in/out', 'Creative spaces', 'Yurts', 'Design', 'Tropical', 'Tiny homes', 'Campers', 'Arctic', 'Surfing', 'Skiing', 'Vineyards', 'Bed & breakfasts', "Chef's kitchens", "Shepherd's huts", 'Top of the world', 'Ryokans', 'Minsus', 'Barns', 'Casas particulares', 'Windmills', 'Grand pianos', 'Towers', 'Adapted', 'Truli', 'Beach']
  const [focusedIndex, setFocusedIndex] = useState(null);
  const [isScrollingDown, setIsScrollingDown] = useState(false);
- const [lastScrollY, setLastScrollY] = useState(0);
+ const lastScrollY = useRef(0);
+ const [showCompactSearch, setShowCompactSearch] = useState(false);
 
 
  function handleFocus(index) {
@@ -20,8 +21,11 @@ export default function Header() {
   const handleScroll = () => {
    const scrollY = window.scrollY;
 
-   setIsScrollingDown(scrollY > lastScrollY);
-   setLastScrollY(scrollY);
+   setIsScrollingDown(scrollY > lastScrollY.current);
+   lastScrollY.current = scrollY;
+
+   const isAtTop = scrollY < 50;
+   setShowCompactSearch(!isAtTop);
   };
 
   window.addEventListener("scroll", handleScroll);
@@ -54,6 +58,19 @@ export default function Header() {
    <div className={`mid-header`}>
     <div className='top-row'>
      <img className='logo' src='/assets/asset 63.svg' />
+     <div className={`scrolled-down-search-criteria ${showCompactSearch ? "show" : ""}`}>
+      <div>
+       <p className='bold'>Anywhere</p>
+      </div>
+      <div className='divider'></div>
+      <div className='bold'>Any week</div>
+      <div className='divider'></div>
+      <div className='lighter'>Add g...</div>
+      <div className='search'>
+       <img className='search-img' src='/assets/asset 64.svg' />
+      </div>
+     </div>
+
      <div className='header-right-container'>
       <p>Airbnb your home</p>
       <img className='world-icon' src='/assets/asset 66.svg' />
@@ -64,13 +81,13 @@ export default function Header() {
      </div>
     </div>
 
-    <div className={`middle-row ${isScrollingDown ? "fade-out-and-up" : ""}`}>
+    <div className={`middle-row ${showCompactSearch ? "fade-out-and-up" : ""}`}>
      {/* these toggle colors and change the bottom row */}
      <p>Homes</p>
      <p>Experiences</p>
     </div>
 
-    <div className={`bottom-row ${isScrollingDown ? "merge-up" : ""}`}>
+    <div className={`bottom-row ${showCompactSearch ? "merge-up" : ""}`}>
      <div className='bottom-row-content-container'>
 
 
