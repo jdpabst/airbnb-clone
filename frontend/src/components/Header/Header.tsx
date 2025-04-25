@@ -37,7 +37,7 @@ export default function Header() {
  const images = Array.from({ length: 62 }, (_, index) => `/assets/asset ${index}.jpeg`)
 
  return (
-  <div className='header'>
+  <div className={`header ${showCompactSearch ? 'shrink-header-mid-size' : ""}`}>
    <div className='mobile-header'>
     <button className='start-search-mobile'>
      <img src='/assets/asset 65.svg' />
@@ -55,7 +55,7 @@ export default function Header() {
     </div>
    </div>
 
-   <div className={`mid-header`}>
+   <div className={`mid-header ${showCompactSearch ? 'shorten-header-height' : ""}`}>
     <div className='top-row'>
      <img className='logo' src='/assets/asset 63.svg' />
      <div className={`scrolled-down-search-criteria ${showCompactSearch ? "show" : ""}`}>
@@ -142,6 +142,16 @@ export default function Header() {
 
       </div>
      </div>
+    </div>
+    <div className='sidescroll-menu'>
+     <ul>
+      {images.map((src, index) => (
+       <li key={index}>
+        <img src={src} alt={`Asset ${index}`} />
+        <p>{homeTypes[index]}</p>
+       </li>
+      ))}
+     </ul>
     </div>
    </div>
 
