@@ -144,6 +144,10 @@ export default function Header() {
      </div>
     </div>
     <div className='sidescroll-menu'>
+     <button className="bttn-left">
+      <img src='/assets/asset 69.svg' />
+     </button>
+     <div className='fade-left fade'></div>
      <ul>
       {images.map((src, index) => (
        <li key={index}>
@@ -152,6 +156,10 @@ export default function Header() {
        </li>
       ))}
      </ul>
+     <div className='fade-right fade'></div>
+     <button className='bttn-right'>
+      <img src='/assets/asset 70.svg' />
+     </button>
     </div>
    </div>
 
