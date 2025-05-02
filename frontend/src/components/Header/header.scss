@@ -362,6 +362,7 @@
    padding-right: 50%;
    background-color: white;
    position: relative;
+   overflow: hidden;
 
    button {
     z-index: 100;
@@ -385,11 +386,11 @@
 
    .bttn-right {
     top: 10px;
-    left: 376px
+    left: 380px
    }
 
    .fade {
-    width: 30px;
+    width: 50px;
     position: absolute;
     z-index: 50;
    }
@@ -398,14 +399,14 @@
     left: 38px;
     top: -3px;
     height: 100%;
-    background-image: linear-gradient(to right, white, transparent)
+    background-image: linear-gradient(to right, white, white, white, transparent)
    }
 
    .fade-right {
     left: 356px;
     top: -3px;
     height: 100%;
-    background-image: linear-gradient(to left, white, transparent)
+    background-image: linear-gradient(to left, white, white, white, transparent)
    }
 
    ul {
@@ -414,8 +415,9 @@
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    gap: 40px;
-    overflow: scroll;
+    gap: 55px;
+    overflow-x: auto;
+    white-space: nowrap;
     scrollbar-width: none; // Firefox
     -ms-overflow-style: none; // IE/Edge
 

@@ -8,6 +8,8 @@ export default function Header() {
  const lastScrollY = useRef(0);
  const [showCompactSearch, setShowCompactSearch] = useState(false);
 
+ const navRef = useRef<HTMLUListElement | null>(null);
+
 
  function handleFocus(index) {
   setFocusedIndex(index);
@@ -32,7 +34,19 @@ export default function Header() {
   return () => window.removeEventListener("scroll", handleScroll);
  }, [lastScrollY]);
 
+ const handleScrollLeft = () => {
+  console.log('scroll left clicked');
+  if (navRef.current) {
+   navRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+  }
+ };
 
+ const handleScrollRight = () => {
+  console.log('scroll right clicked');
+  if (navRef.current) {
+   navRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+  }
+ };
 
  const images = Array.from({ length: 62 }, (_, index) => `/assets/asset ${index}.jpeg`)
 
@@ -144,11 +158,11 @@ export default function Header() {
      </div>
     </div>
     <div className='sidescroll-menu'>
-     <button className="bttn-left">
+     <button className="bttn-left" onClick={() => handleScrollLeft()}>
       <img src='/assets/asset 69.svg' />
      </button>
      <div className='fade-left fade'></div>
-     <ul>
+     <ul ref={navRef}>
       {images.map((src, index) => (
        <li key={index}>
         <img src={src} alt={`Asset ${index}`} />
@@ -157,7 +171,7 @@ export default function Header() {
       ))}
      </ul>
      <div className='fade-right fade'></div>
-     <button className='bttn-right'>
+     <button className='bttn-right' onClick={() => handleScrollRight()}>
       <img src='/assets/asset 70.svg' />
      </button>
     </div>
