@@ -7,6 +7,8 @@ export default function Header() {
  const [isScrollingDown, setIsScrollingDown] = useState(false);
  const lastScrollY = useRef(0);
  const [showCompactSearch, setShowCompactSearch] = useState(false);
+ const [atStart, setAtStart] = useState(true);
+ const [atEnd, setAtEnd] = useState(false);
 
  const navRef = useRef<HTMLUListElement | null>(null);
 
@@ -47,6 +49,27 @@ export default function Header() {
    navRef.current.scrollBy({ left: 300, behavior: 'smooth' });
   }
  };
+
+ useEffect(() => {
+  const nav = navRef.current;
+
+  const handleScroll = () => {
+   if (!nav) return;
+   const { scrollLeft, scrollWidth, clientWidth } = nav;
+   setAtStart(scrollLeft === 0);
+   setAtEnd(scrollLeft + clientWidth >= scrollWidth - 1); // -1 to account for rounding
+  };
+
+  if (nav) {
+   nav.addEventListener("scroll", handleScroll);
+   // Fire once on mount to set initial state
+   handleScroll();
+  }
+
+  return () => {
+   nav?.removeEventListener("scroll", handleScroll);
+  };
+ }, []);
 
  const images = Array.from({ length: 62 }, (_, index) => `/assets/asset ${index}.jpeg`)
 
@@ -157,23 +180,41 @@ export default function Header() {
       </div>
      </div>
     </div>
-    <div className='sidescroll-menu'>
-     <button className="bttn-left" onClick={() => handleScrollLeft()}>
-      <img src='/assets/asset 69.svg' />
-     </button>
-     <div className='fade-left fade'></div>
-     <ul ref={navRef}>
-      {images.map((src, index) => (
-       <li key={index}>
-        <img src={src} alt={`Asset ${index}`} />
-        <p>{homeTypes[index]}</p>
-       </li>
-      ))}
-     </ul>
-     <div className='fade-right fade'></div>
-     <button className='bttn-right' onClick={() => handleScrollRight()}>
-      <img src='/assets/asset 70.svg' />
-     </button>
+    <div className='nav-filter-menus'>
+     <div className='sidescroll-menu'>
+      {!atStart && (
+       <div>
+        <button className="bttn-left" onClick={() => handleScrollLeft()}>
+         <img src='/assets/asset 69.svg' />
+        </button>
+        <div className='fade-left fade'></div>
+       </div>
+      )}
+
+      <ul ref={navRef}>
+       {images.map((src, index) => (
+        <li key={index}>
+         <img src={src} alt={`Asset ${index}`} />
+         <p>{homeTypes[index]}</p>
+        </li>
+       ))}
+      </ul>
+
+      {!atEnd && (
+       <div>
+        <button className='bttn-right' onClick={() => handleScrollRight()}>
+         <img src='/assets/asset 70.svg' />
+        </button>
+        <div className='fade-right fade'></div>
+       </div>
+      )}
+     </div>
+     <div className='filters'>
+      <button>
+       <img className='filter-img' src='/assets/asset 71.svg' />
+       <p>Filters</p>
+      </button>
+     </div>
     </div>
    </div>
 

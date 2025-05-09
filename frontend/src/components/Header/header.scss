@@ -354,118 +354,156 @@
    }
   }
 
-  .sidescroll-menu {
-   margin-top: 56px;
-   margin-bottom: 2px;
-   width: 100%;
-   padding-left: 42px;
-   padding-right: 50%;
-   background-color: white;
+  .nav-filter-menus {
    position: relative;
-   overflow: hidden;
 
-   button {
-    z-index: 100;
-    position: absolute;
-    height: 32px;
-    width: 32px;
-    border-radius: 50%;
-    border: 1px solid #dddddd;
+
+   .sidescroll-menu {
+    margin-top: 56px;
+    margin-bottom: 2px;
+    width: 100%;
+    padding-left: 62px;
+    padding-right: 50%;
     background-color: white;
+    position: relative;
+    overflow: hidden;
 
-    img {
-     height: 12px;
-     margin-top: 2px;
-    }
-   }
+    button {
+     z-index: 100;
+     position: absolute;
+     height: 32px;
+     width: 32px;
+     border-radius: 50%;
+     border: 1px solid #dddddd;
+     background-color: white;
 
-   .bttn-left {
-    top: 10px;
-    left: 41px;
-   }
-
-   .bttn-right {
-    top: 10px;
-    left: 380px
-   }
-
-   .fade {
-    width: 50px;
-    position: absolute;
-    z-index: 50;
-   }
-
-   .fade-left {
-    left: 38px;
-    top: -3px;
-    height: 100%;
-    background-image: linear-gradient(to right, white, white, white, transparent)
-   }
-
-   .fade-right {
-    left: 356px;
-    top: -3px;
-    height: 100%;
-    background-image: linear-gradient(to left, white, white, white, transparent)
-   }
-
-   ul {
-    height: 58px;
-    padding-right: 20px;
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    gap: 55px;
-    overflow-x: auto;
-    white-space: nowrap;
-    scrollbar-width: none; // Firefox
-    -ms-overflow-style: none; // IE/Edge
-
-    &::-webkit-scrollbar {
-     display: none; // Chrome/Safari
+     img {
+      height: 12px;
+      margin-top: 2px;
+     }
     }
 
-    li {
+    .bttn-left {
+     top: 7px;
+     left: 41px;
+    }
+
+    .bttn-right {
+     top: 7px;
+     left: 380px
+    }
+
+    .fade {
+     width: 50px;
+     position: absolute;
+     z-index: 50;
+    }
+
+    .fade-left {
+     left: 38px;
+     top: -3px;
      height: 100%;
-     flex-shrink: 0;
+     background-image: linear-gradient(to right, white, white, transparent)
+    }
+
+    .fade-right {
+     left: 360px;
+     top: -3px;
+     height: 100%;
+     background-image: linear-gradient(to left, white, white, transparent)
+    }
+
+    ul {
+     height: 58px;
+     padding-right: 20px;
+     list-style-type: none;
      display: flex;
-     flex-direction: column;
+     flex-direction: row;
+     gap: 55px;
+     overflow-x: auto;
+     white-space: nowrap;
+     scrollbar-width: none; // Firefox
+     -ms-overflow-style: none; // IE/Edge
+
+     &::-webkit-scrollbar {
+      display: none; // Chrome/Safari
+     }
+
+     li {
+      height: 100%;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      img {
+       height: 25px;
+       margin-bottom: 5px;
+       filter: invert(38%) sepia(0%) saturate(138%) hue-rotate(166deg) brightness(108%) contrast(90%);
+      }
+
+      p {
+       white-space: nowrap;
+       font-size: 12.5px;
+       font-weight: 500;
+       color: #6a6a6a
+      }
+
+     }
+
+     li:hover {
+      border-bottom: 2px solid #dddddd;
+      cursor: pointer;
+
+      img {
+       filter: invert(0%) sepia(43%) saturate(6479%) hue-rotate(327deg) brightness(106%) contrast(106%);
+      }
+
+      p {
+       color: black;
+      }
+     }
+    }
+
+    ul::scroll-button(*) {
+     border: 1px solid #dddddd;
+     border-radius: 50%;
+     background-color: #ff385c
+    }
+   }
+
+   .filters {
+    position: absolute;
+    right: 253px;
+    top: 55px;
+
+    button {
+     padding: 10px;
+     display: flex;
+     justify-content: space-around;
      align-items: center;
+     height: 47px;
+     width: 88px;
+     border-radius: 10px;
+     background-color: white;
+     border: 1px solid #dddddd;
 
-     img {
-      height: 25px;
-      margin-bottom: 5px;
-      filter: invert(38%) sepia(0%) saturate(138%) hue-rotate(166deg) brightness(108%) contrast(90%);
+     .filter-img {
+      height: 16px;
      }
 
      p {
-      white-space: nowrap;
-      font-size: 12.5px;
-      font-weight: 500;
-      color: #6a6a6a
+      font-size: 12px;
      }
-
     }
 
-    li:hover {
-     border-bottom: 2px solid #dddddd;
+    button:hover {
      cursor: pointer;
-
-     img {
-      filter: invert(0%) sepia(43%) saturate(6479%) hue-rotate(327deg) brightness(106%) contrast(106%);
-     }
-
-     p {
-      color: black;
-     }
+     background-color: #ebebeb;
+     border: 1px solid #6a6a6a;
     }
    }
 
-   ul::scroll-button(*) {
-    border: 1px solid #dddddd;
-    border-radius: 50%;
-    background-color: #ff385c
-   }
   }
 
 
