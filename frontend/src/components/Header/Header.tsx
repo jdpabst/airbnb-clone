@@ -180,8 +180,8 @@ export default function Header() {
       </div>
      </div>
     </div>
-    <div className='nav-filter-menus'>
-     <div className='sidescroll-menu'>
+    <div className={`nav-filter-menus ${showCompactSearch ? 'move-up' : ''}`}>
+     <div className={`sidescroll-menu `}>
       {!atStart && (
        <div>
         <button className="bttn-left" onClick={() => handleScrollLeft()}>

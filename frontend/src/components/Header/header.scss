@@ -357,13 +357,13 @@
   .nav-filter-menus {
    position: relative;
 
-
    .sidescroll-menu {
     margin-top: 56px;
     margin-bottom: 2px;
-    width: 100%;
+    // width: 412px;
+    // width: 100%;
     padding-left: 62px;
-    padding-right: 50%;
+    // padding-right: 530px;
     background-color: white;
     position: relative;
     overflow: hidden;
@@ -390,7 +390,7 @@
 
     .bttn-right {
      top: 7px;
-     left: 380px
+
     }
 
     .fade {
@@ -407,7 +407,7 @@
     }
 
     .fade-right {
-     left: 360px;
+     // left: 364px;
      top: -3px;
      height: 100%;
      background-image: linear-gradient(to left, white, white, transparent)
@@ -531,6 +531,12 @@
   opacity: 0;
   scale: 0.5;
  }
+
+ .move-up {
+  margin-top: -130px;
+  background-color: white;
+  border-top: 1px solid #e7e7e7;
+ }
 }
 
 @media screen and (max-width: 767px) {
@@ -563,6 +569,31 @@
   flex-direction: column
  }
 
+ .sidescroll-menu {
+  width: 412px;
+
+  .bttn-right {
+   left: 380px
+  }
+ }
+
+ .fade-right {
+  left: 364px;
+ }
+
 }
 
-@media screen and (min-width: 1024px) {}
+@media screen and (min-width: 1023px) {
+ .sidescroll-menu {
+  width: 642px;
+
+  .bttn-right {
+   left: 610px;
+  }
+ }
+
+ .fade-right {
+  left: 595px;
+ }
+
+}
